@@ -25,6 +25,9 @@ export default new Vuex.Store({
           || book.synopsis.toLowerCase().includes(input.toLowerCase()),
       );
     },
+    RESET_FILTERED_BOOKS(state) {
+      state.filteredBooks = state.books;
+    },
   },
   actions: {
     async fillStore({ state }) {
