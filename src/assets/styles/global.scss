@@ -1,0 +1,61 @@
+@import './_variables.scss';
+
+body {
+    background-color: $body-bg;
+    padding: 0;
+    margin: 0;
+
+    main {
+        max-width: 720px;
+        margin: 0 auto;
+        background-color: $white;
+        margin: $space-l auto;
+        @extend %default-border-radius;
+
+        h1 {
+            color: $highlight;
+        }
+
+        h2 {
+            color: $highlight-dark;
+        }
+
+        .rating {
+            color: black;
+            font-size: 16px;
+        }
+
+        .caption {
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        button {
+            padding: $space-s;
+            background-color: $highlight;
+            color: $white;
+            cursor: pointer;
+            transition: background-color .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+            @extend %default-border-radius;
+            outline: none;
+            vertical-align: middle;
+            border: $space-xxs solid transparent;
+
+            &.upvoted {
+                background-color: $white;
+                color: $highlight;
+                border: $space-xxs solid $highlight;
+
+                &:hover {
+                    background-color: darken($highlight, 25%);
+                    color: $white;
+                    border: $space-xxs solid darken($highlight, 25%);
+                }
+            }
+
+            &:hover {
+                background-color: darken($highlight, 25%);
+            }
+        }
+    }
+}
